@@ -1,0 +1,1 @@
+//The JS file to hold our bot detection logic
