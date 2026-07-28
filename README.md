@@ -1,4 +1,7 @@
 # Basic Bot Detection 
+
+![alt text](public/image.png)
+
 Detecting bots on the client-side. This script will analyze bot data & how they interact with a webpage. 
 - Looking at: interaction patterns, browser settings, or how a page's layout is displayed.
 
