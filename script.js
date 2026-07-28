@@ -43,6 +43,7 @@ function detectBot() {
         const detectorResult = detectors[detectorName];
         detections[detectorName] = { bot: detectorResult };
         
+        //Very SIMPLE program: if any is true, we conclude it is a bot. Very safe.
         if (detectorResult) {
             verdict = { bot: true }; // Sets the verdict to true at the first detection of bot-like activity
         }
