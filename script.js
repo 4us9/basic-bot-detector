@@ -15,8 +15,11 @@ function detectBot() {
         //If the info contains "Headless" the app can treat this as suspicious
         headlessBrowser: navigator.userAgent.includes("Headless"),
 
-        /*Note: the more indicators you analyze, the more accurate your bot detection can become*/
+        /*Note: the more indicators you analyze, the more accurate your bot detection can become. And the detection above can be maneuvered*/
         
+        // Checks if no languages are set, uncommon for regular users
+        noLanguages: (navigator.languages?.length || 0) === 0, 
+
     } 
 
 }
