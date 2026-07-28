@@ -97,5 +97,11 @@ function detectInconsistentEval() {
 
 }
 
+const { detections, verdict } = detectBot();
+
+document.getElementById('result').innerText = verdict.bot ? 'Bot detected' : 'No bot detected'; // Displays the detection result on the web page
+
+console.log(JSON.stringify(verdict, null, 2)); // Logs the final verdict, "2" just indents two spaces for clarity
+console.log(JSON.stringify(detections, null, 2)); // Logs detailed detections
 
 
