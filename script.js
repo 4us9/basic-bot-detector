@@ -31,7 +31,26 @@ function detectBot() {
             .getAttributeNames()
             .some((attr) => ['selenium', 'webdriver', 'driver'].includes(attr)),
 
-    } 
+    }
+    
+    //After gathering data points about the visitor's env, we now analyze the info
+    //Stores the detection results and the final verdict
+    const detections = {};
+    let verdict = { bot: false };
+
+    // Iterates over the detectors and sets the verdict to true if any of them detects bot-like activity
+    for (const detectorName in detectors) {
+        const detectorResult = detectors[detectorName];
+        detections[detectorName] = { bot: detectorResult };
+        
+        if (detectorResult) {
+            verdict = { bot: true }; // Sets the verdict to true at the first detection of bot-like activity
+        }
+
+    }
+
+    // which specific checks were triggered, not just the overall answer.
+    return { detections, verdict };
 }
 
 /**
