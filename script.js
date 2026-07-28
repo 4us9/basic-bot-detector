@@ -19,6 +19,12 @@ function detectBot() {
         
         // Checks if no languages are set, uncommon for regular users
         noLanguages: (navigator.languages?.length || 0) === 0, 
+        
+        // Check for inconsistent eval lengths
+        inconsistentEval: detectInconsistentEval(), 
+
+        
+        
 
     } 
 }
