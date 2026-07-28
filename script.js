@@ -23,8 +23,13 @@ function detectBot() {
         // Check for inconsistent eval lengths
         inconsistentEval: detectInconsistentEval(), 
 
-        
-        
+
+        // Checks whether the <html> element contains attributes
+        // commonly injected by browser automation frameworks. It is there to help automation
+        //stay on track. Modern automation remove them now.
+        domManipulation: document.documentElement
+            .getAttributeNames()
+            .some((attr) => ['selenium', 'webdriver', 'driver'].includes(attr)),
 
     } 
 }
