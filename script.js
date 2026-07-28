@@ -9,7 +9,14 @@ function detectBot() {
     const detectors={
 
         //detecting WebDriver automations
-        webDriver: navigator.webdriver //checks if browser is being controlled by Selenium, Puppeteer, or other automated testing frameworks.
+        webDriver: navigator.webdriver, //checks if browser is being controlled by Selenium, Puppeteer, or other automated testing frameworks.
+
+        //Check User Agent
+        //If the info contains "Headless" the app can treat this as suspicious
+        headlessBrowser: navigator.userAgent.includes("Headless"),
+
+        /*Note: the more indicators you analyze, the more accurate your bot detection can become*/
+        
     } 
 
 }
